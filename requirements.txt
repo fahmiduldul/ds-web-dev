@@ -8,7 +8,7 @@ click
 colorama
 command-not-found
 configobj
-constantly=
+constantly
 cryptography
 cycler
 dbus-python
