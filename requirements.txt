@@ -82,7 +82,6 @@ ssh-import-id
 systemd-python
 tornado
 traitlets
-Twisted==19.10.0
 ubuntu-advantage-tools
 ufw
 unattended-upgrades
