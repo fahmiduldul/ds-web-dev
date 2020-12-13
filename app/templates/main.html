@@ -38,7 +38,7 @@
     </div> -->
 
     <!-- chart area -->
-    <div class="col-11">
+    <div class="container">
 
       <!-- title -->
       <div class="row">
@@ -47,19 +47,31 @@
 
       <!-- graph -->
       <div class="row">
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12 col-xs-12">
           <div id="chart-1"></div>
+          <p class="mx-5">
+            This chart show how big the contribution of manufacturing for Indonesia economy. Even after 60 years, manufacturing still one of the economic mover
+          </p>
         </div>
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12 col-xs-12">
           <div id="chart-2"></div>
+          <p class="mx-5">
+            As GPD grows, child mortality becomes less. This means Indonesia has better healthcare since the last 60 years.
+          </p>
         </div>
       </div>
       <div class="row">
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12 col-xs-12">
           <div id="chart-3"></div>
+          <p class="mx-5">
+            This is the bad part of Indonesia economy growth. It really depends on fossil fuel. The trends still goes up over the years
+          </p>
         </div>
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12 col-xs-12">
           <div id="chart-4"></div>
+          <p class="mx-5">
+            One of the reason for CO2 Emissions growth in Indonesia is electricity production. As show in this graph, Indonesia have been investing heavily in Fossil fuel.
+          </p>
         </div>
       </div>
     </div>
@@ -67,11 +79,9 @@
 
   <script>
     let figures = {{ figuresJSON | safe }}
-    console.log(figures);
-    Plotly.plot('chart-1', figures[0].data, figures[0].layout || {})
-    Plotly.plot('chart-2', figures[1].data, figures[1].layout || {})
-    Plotly.plot('chart-3', figures[2].data, figures[2].layout || {})
-    Plotly.plot('chart-4', figures[3].data, figures[3].layout || {})
+    for(let i = 0; i < figures.length; i++) {
+      Plotly.plot('chart-'+(i+1).toString(), figures[i].data, figures[i].layout || {})
+    }
   </script>
 </body>
 </html>
