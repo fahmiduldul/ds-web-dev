@@ -6,7 +6,6 @@ certifi
 chardet
 click
 colorama
-command-not-found
 configobj
 constantly
 cryptography
