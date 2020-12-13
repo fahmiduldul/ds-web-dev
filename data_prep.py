@@ -13,8 +13,9 @@ def get_dataframe():
 
   desired_row_list = [
     "Mortality rate, infant, male (per 1,000 live births)",
-    "GDP (current LCU)",
-    "Manufacturing, value added (constant LCU)"
+    "GDP (constant 2010 US$)",
+    "Manufacturing, value added (constant LCU)",
+    "CO2 emissions (kg per 2010 US$ of GDP)"
   ]
 
   drop_first_and_last_row = [True] * df.shape[1]
@@ -32,12 +33,12 @@ def get_dataframe():
 
   columns_name_map = {
     11:"Mortality rate",
-    47:"GDP",
-    51:"Manufacturing"
+    259:"GDP",
+    51:"Manufacturing",
+    433:"CO2 Emissions"
   }
 
   new_df = new_df.rename(columns=columns_name_map)
-
   return new_df
 
 def get_figures():
@@ -51,21 +52,30 @@ def get_figures():
   x_val = df['year'].tolist()
 
   #plot data into the figure
-  for col_name in desired_columns:
-    graph_one.append(
-      go.Scatter(
-        x = x_val,
-        y = y_val_df[col_name].tolist(),
-        mode = 'lines+markers',
-        name = col_name
-      )
+  graph_one.append(
+    go.Scatter(
+      x = x_val,
+      y = y_val_df["GDP"].tolist(),
+      mode = 'lines+markers',
+      name = "GDP"
     )
+  )
+  graph_one.append(
+    go.Scatter(
+      x = x_val,
+      y = y_val_df["Manufacturing"].tolist(),
+      mode = 'lines+markers',
+      name = "Manufacturing",
+      yaxis = 'y2'
+    )
+  )
 
   #figure configuration
   layout_one = dict(
     title = 'GDP & Manufacturing Added Value over Years',
     xaxis = dict(title='Year'),
-    yaxis = dict(title='USD')
+    yaxis = dict(title='GDP'),
+    yaxis2 = dict(title='Manufacturing Added Value', overlaying='y', side='right')
   )
 
   # figure 2, scatterplot child mortality rate vs GDP
@@ -77,7 +87,7 @@ def get_figures():
     go.Scatter(
       x = x_val,
       y = y_val,
-      mode = 'lines+markers'
+      mode = 'markers'
     )
   )
 
