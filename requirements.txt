@@ -34,7 +34,7 @@ jsonschema
 jupyter-client
 jupyter-core
 keyring
-language-selector
+kiwisolver
 launchpadlib
 lazr.restfulclient
 lazr.uri
