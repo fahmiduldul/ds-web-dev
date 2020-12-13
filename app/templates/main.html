@@ -21,60 +21,64 @@
   </style>
 </head>
 <body>
-  <div class="row" id="screen">
 
-    <!-- sidebar -->
-    <!-- <div class="col-1 col-xs-2 p-0" id="sidebar">
-      <div class="row">
-        <a href="https://github.com/fahmiduldul">
-          <img src="/static/github_logo.png" class="img-fluid m-2">
-        </a>
-      </div>
-      <div class="row">
-        <a href="https://www.linkedin.com/in/fahmi-abdulaziz-958127117/">
-          <img src="/static/linkedin_logo.png" class="img-fluid m-2">
-        </a>
-      </div>
-    </div> -->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #FFC900;">
+    <div class="container-fluid">
+      <span class="navbar-brand mx-2 mb-0 h1">Indonesia World Bank Data Visualized</span>
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/fahmiduldul" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Visit my Github profile">
+            <img src="/static/github.svg" width="30px", height="30px">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.linkedin.com/in/fahmi-abdulaziz-958127117/" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Visit my LindkedIn profile">
+            <img src="/static/linkedin.svg" width="30px", height="30px">
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+  </nav>
 
-    <!-- chart area -->
-    <div class="container">
+  <!-- chart area -->
+  <div class="container" style="padding-top: 20px;">
 
-      <!-- title -->
-      <div class="row">
-        <h2 class="text-center">Indonesia World Bank Data Visualized</h2>
-      </div>
+    <!-- title -->
+    <div class="row">
+      <h2 class="text-center">Indonesia World Bank Data Visualized</h2>
+    </div>
 
-      <!-- graph -->
-      <div class="row">
-        <div class="col-md-6 col-sm-12 col-xs-12">
-          <div id="chart-1"></div>
-          <p class="mx-5">
-            This chart show how big the contribution of manufacturing for Indonesia economy. Even after 60 years, manufacturing still one of the economic mover
-          </p>
-        </div>
-        <div class="col-md-6 col-sm-12 col-xs-12">
-          <div id="chart-2"></div>
-          <p class="mx-5">
-            As GPD grows, child mortality becomes less. This means Indonesia has better healthcare since the last 60 years.
-          </p>
-        </div>
+    <!-- graph -->
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <div id="chart-1"></div>
+        <p class="mx-5">
+          This chart show how big the contribution of manufacturing for Indonesia economy. Even after 60 years, manufacturing still one of the economic mover
+        </p>
       </div>
-      <div class="row">
-        <div class="col-md-6 col-sm-12 col-xs-12">
-          <div id="chart-3"></div>
-          <p class="mx-5">
-            This is the bad part of Indonesia economy growth. It really depends on fossil fuel. The trends still goes up over the years
-          </p>
-        </div>
-        <div class="col-md-6 col-sm-12 col-xs-12">
-          <div id="chart-4"></div>
-          <p class="mx-5">
-            One of the reason for CO2 Emissions growth in Indonesia is electricity production. As show in this graph, Indonesia have been investing heavily in Fossil fuel.
-          </p>
-        </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <div id="chart-2"></div>
+        <p class="mx-5">
+          As GPD grows, child mortality becomes less. This means Indonesia has better healthcare since the last 60 years.
+        </p>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <div id="chart-3"></div>
+        <p class="mx-5">
+          This is the bad part of Indonesia economy growth. It really depends on fossil fuel. The trends still goes up over the years
+        </p>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <div id="chart-4"></div>
+        <p class="mx-5">
+          One of the reason for CO2 Emissions growth in Indonesia is electricity production. As show in this graph, Indonesia have been investing heavily in Fossil fuel.
+        </p>
+      </div>
+    </div>
+    <p>To see the source code <a href="https://github.com/fahmiduldul/ds-web-dev">Click Here</a></p>
   </div>
 
   <script>

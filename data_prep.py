@@ -50,7 +50,7 @@ def get_dataframe():
 def get_figures():
 
   df = get_dataframe()
-  print(df.columns)
+  
   # graph 1, line chart GPS & Manufacturing vs Year
   graph_one = []
   y_val_df = df[["GDP", "Manufacturing"]]
