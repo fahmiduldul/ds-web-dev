@@ -24,7 +24,7 @@
   <div class="row" id="screen">
 
     <!-- sidebar -->
-    <div class="col-1 col-xs-2 p-0" id="sidebar">
+    <!-- <div class="col-1 col-xs-2 p-0" id="sidebar">
       <div class="row">
         <a href="https://github.com/fahmiduldul">
           <img src="/static/github_logo.png" class="img-fluid m-2">
@@ -35,14 +35,14 @@
           <img src="/static/linkedin_logo.png" class="img-fluid m-2">
         </a>
       </div>
-    </div>
+    </div> -->
 
     <!-- chart area -->
     <div class="col-11">
 
       <!-- title -->
       <div class="row">
-        <h2>Indonesia World Bank Data Visualized</h3>
+        <h2 class="text-center">Indonesia World Bank Data Visualized</h2>
       </div>
 
       <!-- graph -->
@@ -54,6 +54,14 @@
           <div id="chart-2"></div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-6">
+          <div id="chart-3"></div>
+        </div>
+        <div class="col-6">
+          <div id="chart-4"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -62,6 +70,8 @@
     console.log(figures);
     Plotly.plot('chart-1', figures[0].data, figures[0].layout || {})
     Plotly.plot('chart-2', figures[1].data, figures[1].layout || {})
+    Plotly.plot('chart-3', figures[2].data, figures[2].layout || {})
+    Plotly.plot('chart-4', figures[3].data, figures[3].layout || {})
   </script>
 </body>
 </html>
