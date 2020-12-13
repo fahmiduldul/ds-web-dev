@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HELLO WORLD!</title>
 
+  <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  
+  <!-- plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <style>
     .row {
       margin: 0;
@@ -52,5 +56,12 @@
       </div>
     </div>
   </div>
+
+  <script>
+    let figures = {{ figuresJSON | safe }}
+    console.log(figures);
+    Plotly.plot('chart-1', figures[0].data, figures[0].layout || {})
+    Plotly.plot('chart-2', figures[1].data, figures[1].layout || {})
+  </script>
 </body>
 </html>

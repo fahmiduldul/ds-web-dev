@@ -1,4 +1,5 @@
 import pandas as pd
+import plotly.graph_objs as go
 
 def get_dataframe():
   '''
@@ -30,12 +31,60 @@ def get_dataframe():
   new_df['year'] = new_df.index
 
   columns_name_map = {
-    11:"Mortality rate, infant, male (per 1,000 live births)",
-    47:"GDP (current LCU)",
-    51:"Manufacturing, value added (constant LCU)"
+    11:"Mortality rate",
+    47:"GDP",
+    51:"Manufacturing"
   }
 
   new_df = new_df.rename(columns=columns_name_map)
 
   return new_df
 
+def get_figures():
+
+  df = get_dataframe()
+
+  # graph 1, line chart GPS & Manufacturing vs Year
+  graph_one = []
+  desired_columns = ["GDP", "Manufacturing"]
+  y_val_df = df[desired_columns]
+  x_val = df['year'].tolist()
+
+  #plot data into the figure
+  for col_name in desired_columns:
+    graph_one.append(
+      go.Scatter(
+        x = x_val,
+        y = y_val_df[col_name].tolist(),
+        mode = 'lines+markers',
+        name = col_name
+      )
+    )
+
+  #figure configuration
+  layout_one = dict(
+    title = 'GDP & Manufacturing Added Value over Years',
+    xaxis = dict(title='Year'),
+    yaxis = dict(title='USD')
+  )
+
+  # figure 2, scatterplot child mortality rate vs GDP
+  graph_two = []
+  x_val = df['GDP'].tolist()
+  y_val = df['Mortality rate'].tolist()
+
+  graph_two.append(
+    go.Scatter(
+      x = x_val,
+      y = y_val,
+      mode = 'lines+markers'
+    )
+  )
+
+  layout_two = dict(
+    title='GDP vs Mortality Rate',
+    xaxis = dict(title='GDP'),
+    yaxis = dict(title='Child Mortality Rate per 1000')
+  )
+
+  return [dict(data=graph_one, layout=layout_one), dict(data=graph_two, layout=layout_two)]
