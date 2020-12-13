@@ -82,7 +82,6 @@ ssh-import-id
 systemd-python
 tornado
 traitlets
-unattended-upgrades
 urllib3
 wadllib
 wcwidth
