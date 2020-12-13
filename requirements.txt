@@ -82,7 +82,7 @@ ssh-import-id
 systemd-python
 tornado
 traitlets
-ufw
+ubuntu-advantage-tools
 unattended-upgrades
 urllib3
 wadllib
