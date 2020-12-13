@@ -4,8 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HELLO WORLD!</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <style>
+    .row {
+      margin: 0;
+    }
+    #sidebar {
+      border-right: 1px solid #bbbbbb;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello World!</h1>
+  <div class="row" id="screen">
+
+    <!-- sidebar -->
+    <div class="col-1 col-xs-2 p-0" id="sidebar">
+      <div class="row">
+        <a href="https://github.com/fahmiduldul">
+          <img src="/static/github_logo.png" class="img-fluid m-2">
+        </a>
+      </div>
+      <div class="row">
+        <a href="https://www.linkedin.com/in/fahmi-abdulaziz-958127117/">
+          <img src="/static/linkedin_logo.png" class="img-fluid m-2">
+        </a>
+      </div>
+    </div>
+
+    <!-- chart area -->
+    <div class="col-11">
+
+      <!-- title -->
+      <div class="row">
+        <h2>Indonesia World Bank Data Visualized</h3>
+      </div>
+
+      <!-- graph -->
+      <div class="row">
+        <div class="col-6">
+          <div id="chart-1"></div>
+        </div>
+        <div class="col-6">
+          <div id="chart-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
