@@ -48,9 +48,13 @@ def get_dataframe():
   return new_df
 
 def get_figures():
+  '''
+  OUTPUT:
+  [plotly JSON] - list of JSON Plotly for frontend
+  '''
 
   df = get_dataframe()
-  
+
   # graph 1, line chart GPS & Manufacturing vs Year
   graph_one = []
   y_val_df = df[["GDP", "Manufacturing"]]
@@ -134,7 +138,7 @@ def get_figures():
     yaxis2 = dict(title='CO2 Emmisions (kt)', overlaying='y', side='right')
   )
 
-  # graph 4, line chart Arable land & Forest Area
+  # graph 4, line chart of electricity production
   graph_four = []
   desired_col_name = ["Renewable", "Fossil", "Hydroelectric"]
   y_val_df = df[desired_col_name]
